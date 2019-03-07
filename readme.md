@@ -480,3 +480,30 @@ var animal = {
 ```
 
 따라서 역참조가 가능하다.
+
+## 튜플
+
+Python에서의 튜플은 보통 `()`를 이용하여, 수정할 수 없는 리스트의 형태이다.
+하지만 TS에서의 튜플은 단지 배열의 요소 수와 자료형을 통제하는 역할을 한다.
+
+```ts
+let tuple: [number, string] = [14109388, 'Hong'];
+```
+
+이런 식으로 선언할 수 있다.
+다만, Python과 다르게 TS는 요소를 수정할 수 있음에 주의한다.
+
+```ts
+let tuple1: [number, string] = [14109388, 'Hong'];  
+const tuple2: [number, string] = [14109388, 'Hong'];
+
+tuple1[0] = 13109388;
+tuple2[0] = 13109388;
+
+console.log(tuple1);    // [ 13109388, 'Hong' ]
+console.log(tuple2);    // [ 13109388, 'Hong' ]
+```
+
+`const`를 이용해서 작성하더라도 수정이 가능하다. 왜 인지는 모르겠다.
+
+
